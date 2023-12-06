@@ -1,0 +1,6 @@
+
+RewriteEngine On
+
+RewriteRule ^arte/(\d+)$ index.php?m=Arte&f=infoArte&idArte=$1 [L]
+
+
