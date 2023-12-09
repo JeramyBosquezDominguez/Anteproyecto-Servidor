@@ -15,10 +15,6 @@
             $datosArtes = Arte::getArte($CodArte);
             $this->render("arte/infoArte.php.twig",["datosArte"=>$datosArtes]) ;
     }
-    public function showArteEditar($idArte) {
-        $datosArte = Arte::getArte($idArte);
-        $this->render("usuario/editarArte.twig", ["datosArte" => $datosArte]);
-    }
 
     public function showAgregarArte(){
         $datos = [
@@ -31,21 +27,21 @@ $this->render('arte/agregarArte.php.twig', $datos);
 
         if (empty($_POST["titulo"]) || empty($_POST["descripcion"]) || empty($_POST["tipoDeArte"]) || empty($_POST["foto"]) || empty($_POST["fechaDeCreacion"]) || empty($_POST["ID"])) {
             // Mostrar un mensaje de error y redirigir si algún campo está vacío.
-            die("error campos vacios");
-        }
+            $this->render("control/camposVacios.php.twig");
+        } else{
     
         // Otros controles de validación podrían agregarse aquí.
         // Intentar registrar al usuario.
         $registroExitoso = Arte::subirArte($_POST["titulo"],$_POST["tipoDeArte"] , $_POST["descripcion"], $_POST["foto"], $_POST["fechaDeCreacion"], $_POST["ID"]);
     
-        if (is_null($registroExitoso)) {
-            // Mostrar mensaje de éxito y redirigir a otra página si es necesario.
-            redireccion("exito.php");
+        if (is_null($registroExitoso)){
+            $this->render("control/exito.php.twig");
         } else {
             // Mostrar mensaje de error y redirigir si el registro falla.
-            redireccion("error2.php");
+            $this->render("control/error.php.twig");
         }
     }
+}
     public function borrarArte($CodArte) {
         $borradoExitoso = Arte::borrarArte($CodArte);
         if ($borradoExitoso) {

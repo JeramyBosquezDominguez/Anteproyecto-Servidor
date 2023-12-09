@@ -18,8 +18,8 @@ class Arte {
         // Constructor vacío por ahora.
     }
 
-    // Getter para CodArte
-    public function getCodArte(): int {
+      // Getter para CodArte
+      public function getCodArte(): int {
         return $this->CodArte;
     }
 
@@ -69,7 +69,7 @@ class Arte {
     }
 
     // Setter para likes
-    public function setLikes(string $likes): void {
+    public function setLikes(int $likes): void {
         $this->likes = $likes;
     }
 
@@ -88,18 +88,13 @@ class Arte {
     public function getID(): string {
         return $this->ID;
     }
-
-    // Setter para ID
-    public function setID(string $ID): void {
-        $this->ID = $ID;
-    }
     public function getNombre(): string {
         return $this->nombre;
     }
 
     // Setter para ID
     public function setNombre(string $nombre): void {
-        $this->ID = $nombre;
+        $this->nombre = $nombre;
     }
     public function getNombreEmpresa(): string {
         return $this->nombreEmpresa;

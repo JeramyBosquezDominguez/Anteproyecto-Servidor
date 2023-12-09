@@ -1,9 +1,9 @@
 <?php
 
 class Empresa {
-    public int $CodEmpresa;
-    public string $nombre;
-    public string $Localidad;
+    private int $CodEmpresa;
+    private string $nombre;
+    private string $Localidad;
 
     public function __construct() {
         // Constructor vacío por ahora.

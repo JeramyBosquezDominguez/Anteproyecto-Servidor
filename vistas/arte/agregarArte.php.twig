@@ -62,7 +62,7 @@
 			<input type="hidden" name="m" value="Arte" />
 			<input type="hidden" name="f" value="registroArte" />
             <input type="hidden" name="fechaDeCreacion" id="fechaDeCreacion" value="{{ fechaDeCreacion }}" />
-            <input type="hidden" id="ID" name="ID" value="{{ _session['usuario_id'] }}" />
+            <input type="hidden" id="ID" name="ID" value="{{ _session['id_usuario'] }}" />
             <!-- Titulo -->
 			<div class="row">
 				<div class="col-xs-2">
@@ -99,17 +99,25 @@
            
             
 
-            <!-- foto -->
-            <div class="row">
-				<div class="col-xs-2">
-					<label for="Foto">Foto: </label>
-				</div>
+           <!-- foto -->
+<div class="row">
+    <div class="col-xs-2">
+        <label for="foto">Foto: </label>
+    </div>
 
-				<div class="col">
-					<input class="form-control" value="https://ethic.es/wp-content/uploads/2022/12/vangog-2.jpg"
-						   id="foto" type="text" name="foto" />
-				</div>
-			</div>
+    <div class="col">
+        <select class="form-control" id="foto" name="foto">
+            <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/220px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg">Noche Estrellada</option>
+            <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Las_Meninas_01.jpg/1200px-Las_Meninas_01.jpg">Meninas</option>
+            <option value="https://static01.nyt.com/images/2023/05/30/well/30WELL-ART-BRAIN-esp/30WELL-ART-BRAIN-superJumbo.jpg">Salud mental</option>
+            <option value="https://hips.hearstapps.com/hmg-prod/images/caminante-64390e7409ef4.jpg?resize=640:*">Camino sobre un mar de nubes</option>
+            <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Fragonard%2C_The_Swing.jpg/1200px-Fragonard%2C_The_Swing.jpg">Columpio</option> 
+            <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg/1200px-La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg">La ronda de noche</option> 
+            <option value="https://ichef.bbci.co.uk/news/640/cpsprodpb/77A0/production/_99442603_retrato.jpg">Retrato</option>
+        </select>
+    </div>
+</div>
+
 
             
 			<div class="row mt-2">

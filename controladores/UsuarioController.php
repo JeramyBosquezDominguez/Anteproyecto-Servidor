@@ -30,7 +30,7 @@
         public function login() {
 
             //  comprobar el token
-            if ($_POST["_csrf"] != $_SESSION["_csrf"]) redireccion("http://localhost/error") ;
+            if ($_POST["_csrf"] != $_SESSION["_csrf"]) redireccion("error.php") ;
 
             //
             if ((empty($_POST["email"])) || (empty($_POST["pass"]))):
@@ -82,10 +82,10 @@
         
             if (is_null($registroExitoso)) {
                 // Mostrar mensaje de éxito y redirigir a otra página si es necesario.
-                redireccion("exito.php");
+                redireccion("index.php?registro=exito");
             } else {
                 // Mostrar mensaje de error y redirigir si el registro falla.
-                redireccion("error2.php");
+                redireccion("index.php?registro=false");
             }
         }
 
@@ -93,8 +93,8 @@
            
             if (empty($_POST["nombre"]) || empty($_POST["apellidos"]) || empty($_POST["email"]) || empty($_POST["pais"]) || empty($_POST["profesion"]) || empty($_POST["empresa"])) {
                 // Mostrar un mensaje de error y redirigir si algún campo está vacío.
-                redireccion("error.php");
-            }
+                $this->render("control/camposVacios.php.twig");
+            }else{
         
             // Otros controles de validación podrían agregarse aquí.
         
@@ -103,12 +103,13 @@
         
             if (is_null($actExitoso)) {
                 // Mostrar mensaje de éxito y redirigir a otra página si es necesario.
-                redireccion("exito.php");
+                $this->render("control/exito.php.twig");
             } else {
                 // Mostrar mensaje de error y redirigir si el registro falla.
-                redireccion("error2.php");
+                $this->render("control/error.php.twig");
             }
         }
+    }
 
         public function perfil($idUsuario){
             $datosUsuario = Usuario::getInfoUsuario($idUsuario);

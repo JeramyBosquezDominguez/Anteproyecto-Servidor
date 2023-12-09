@@ -2,16 +2,16 @@
     require_once "librerias/Conexion.php" ;
 
 class Usuario {
-    public int $ID;
-    public string $nombre;
-    public string $apellidos;
-    public string $email;
-    public string $password;
-    public string $pais;
-    public string $profesion;
-    public string $CodEmpresa;  // Se añadió el signo de interrogación para permitir valores nulos.
-    public string $nombreEmpresa;
-    public function __construct() {
+    private int $ID;
+    private string $nombre;
+    private string $apellidos;
+    private string $email;
+    private string $password;
+    private string $pais;
+    private string $profesion;
+    private string $CodEmpresa;
+    private string $nombreEmpresa;
+    private function __construct() {
         
     }
     public function getNombreEmpresa(): string {
@@ -21,6 +21,30 @@ class Usuario {
     // Setter para nombreEmpresa
     public function setNombreEmpresa(string $nombreEmpresa): void {
         $this->nombreEmpresa = $nombreEmpresa;
+    }
+    public function getApellidos(): string {
+        return $this->apellidos;
+    }
+
+    // Setter para nombreEmpresa
+    public function setApellidos(string $apellidos): void {
+        $this->apellidos = $apellidos;
+    }
+    public function getPais(): string {
+        return $this->pais;
+    }
+
+    // Setter para nombreEmpresa
+    public function setPais(string $pais): void {
+        $this->pais = $pais;
+    }
+    public function getProfesion(): string {
+        return $this->profesion;
+    }
+
+    // Setter para nombreEmpresa
+    public function setProfesion(string $Profesion): void {
+        $this->profesion = $Profesion;
     }
 
     // Getter para ID
@@ -95,6 +119,7 @@ public static function loginUsuario(string $email, string $password) {
     
         // Ejecutar la consulta
         $conexion->query($sql);
+        
     }
 
     public static function actualizarUsuario(int $ID, string $nombre, string $apellidos, string $email, string $pais, string $profesion, int $CodEmpresa): void {

@@ -9,7 +9,11 @@
     // series --> index
     // series/info.php?id=2   --> series/info/2
     //RECOGEN LOS DATOS DE GET O DE POST, DE SI VIENEN DE UN FORMULARIO CON POST O DIRECTAMENTE LA URL.
-    $idUsuario = $_SESSION["usuario_id"] ?? null;
+    if (isset($_GET['registro'])) {
+        $mensajeRegistro = $_GET['registro'] == 'exito' ? 'Registro exitoso.' : 'Error al registrar.';
+        echo '<script>alert("' . $mensajeRegistro . '");</script>';
+    }
+    $idUsuario = $_SESSION["id_usuario"] ?? null;
     $idArte = $_GET["idArte"] ?? null;
     $quien = $_GET["m"]??$_POST["m"]??"usuario";   // Serie, Usuario, Genero, Pelicula, etc...
     $que   = $_GET["f"]??$_POST["f"]??"ShowLogin";   // Función a realizar con el controlador|modelo
