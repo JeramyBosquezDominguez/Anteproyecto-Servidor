@@ -30,7 +30,7 @@ Después de iniciar sesión, los usuarios acceden a su perfil personal, donde pu
 
 - Ver y editar su información de perfil.
 - Explorar su colección de obras de arte.
-- Agregar, editar o eliminar información y obras.
+- Agregar o eliminar obras.
 
 ### Cargar Obras de Arte
 
