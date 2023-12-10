@@ -38,4 +38,4 @@ Los usuarios tienen la capacidad de cargar sus obras, proporcionando detalles co
 
 Únete a ArtHub y sumérgete en un mundo vibrante de creatividad, exploración artística y conexiones significativas. ¡Inspírate y sé parte de nuestra comunidad artística en constante crecimiento! 🎨✨
 
-![ArtHub 1](fotosArtHub/)
+![ArtHub 1](fotosArtHub/inicio.jpg)
