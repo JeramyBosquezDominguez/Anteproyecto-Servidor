@@ -62,6 +62,8 @@ Control Obra cuando se sube mal:
 Editar datos usuario:
 ![ArtHub 1](FotosArthub/editarUsuario.jpg)
 Control edición cuando se sube mal:
+Relacion de tablas: 
+![ArtHub 1](FotosArthub/relacion.jpg)
 ![ArtHub 1](FotosArthub/editarUsuarioMal.jpg)
 Editar usuario bien:
 ![ArtHub 1](FotosArthub/editarUsuarioBien.jpg)
