@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<!-- Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Bootstrap Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+</head>
+<body>
+<!-- Bootstrap Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+</head>
+<body>
+
+	<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+<a class="nav-link" href="paginaPrincipal.php">Inicio</a>
+        </li>
+        <li class="nav-item">
+<a class="nav-link" href="logout.php">Salir</a>
+        </li>
+        
+      </ul>
+      <!-- Left links -->
+    </div>
+
+      <!-- Avatar -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="index.php?m=usuario&f=perfil&idUsuario"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          aria-expanded="false"
+        > 
+          <img
+            src="https://us.123rf.com/450wm/larichev89/larichev891903/larichev89190300012/124784227-icono-de-usuario-azul-en-estilo-plano-con-sombra-larga-bot%C3%B3n-de-cuenta.jpg?ver=6"
+            class="rounded-circle"
+            height="45"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+        </a>
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+        <!-- Perfil del Usuario -->
+        <div class="container">
+    <div class="row">
+        <!-- Perfil del Usuario y Botón "Agregar obra"  -->
+        <div class="col-md-12 d-flex justify-content-center align-items-center">
+            <div class="card shadow mb-4" style="width: 18rem;">
+{#                 <h4 class="card-title">{{ datosUsuario.ID }}</h4>
+ #}                <div class="card-body">
+                    <h4 class="card-title">Nombre: {{ datosUsuario.nombre }}</h4>
+                    <p>Apellidos: {{ datosUsuario.apellidos }}</p>
+                    <p class="card-text">País de Nacimiento:  {{ datosUsuario.pais }}</p>
+                    <p class="card-text">Profesión: {{ datosUsuario.profesion }}</p>
+                    <p class="card-text">Empresa: {{ datosUsuario.nombreEmpresa }}</p>
+                    <a href="index.php?m=Usuario&f=showUsuarioEditar" class="btn btn-dark btn-sm w-100 mt-2">Editar</a>
+                    <!-- Botón "Agregar obra" ocupando todo el ancho -->
+                    <a href="index.php?m=Arte&f=showAgregarArte" class="btn btn-dark btn-lg w-100 mt-2">Agregar obra</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Obras de Arte del Usuario -->
+        <div class="col">
+            <h2 class="mt-4">Obras de Arte Asignadas</h2>
+            <div class="d-flex flex-wrap">
+                {% for arte in datosArtes %}
+                    <div class="card shadow m-2" style="width:18rem;">
+{#                         <h4 class="card-title">{{ arte.CodArte }}</h4>
+ #}                        <div class="card-body">
+                            <h4 class="card-title" style="text-align:center;">{{ arte.titulo }}</h4>
+                            <img src="{{ arte.foto }}" class="card-img-top" style="height: 235px;" />
+                            <p class="card-text">{{ arte.tipoDeArte }}</p>
+                            <p class="card-text">{{ arte.descripcion | raw | slice(0, 50) ~ '...' }}</p>
+                            <p class="card-text"><i class="fa fa-heart" style="font-size:14px"></i>&nbsp;{{ arte.likes }}</p>
+                            <p class="card-text">Fecha publicación:   {{ arte.FechaCreacion }}</p>
+                            <p class="card-text">Nombre del Usuario: {{ arte.nombre }}</p>
+                            <p class="card-text">Nombre de la Empresa: {{ arte.nombreEmpresa }}</p>
+                            <a href="index.php?m=Arte&f=borrarArte&idArte={{arte.CodArte}}" class="btn btn-dark btn-sm">Borrar</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
