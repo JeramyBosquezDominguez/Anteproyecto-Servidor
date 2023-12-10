@@ -37,3 +37,5 @@ Después de iniciar sesión, los usuarios acceden a su perfil personal, donde pu
 Los usuarios tienen la capacidad de cargar sus obras, proporcionando detalles como título, descripción, categoría y seleccionando una imagen de la obra. Una vez cargada, la obra se exhibe en su perfil y en la página principal junto con otras creaciones.
 
 Únete a ArtHub y sumérgete en un mundo vibrante de creatividad, exploración artística y conexiones significativas. ¡Inspírate y sé parte de nuestra comunidad artística en constante crecimiento! 🎨✨
+
+![ArtHub 1](fotosArtHub/)
